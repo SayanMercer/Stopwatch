@@ -4,26 +4,26 @@ let int = null;
 
 document.getElementById("start-timer").addEventListener("click", () => {
     if(int !== null) {
-        clearInterval(int);
+        clearInterval(int);  // For starting the timer
     }
     int = setInterval(displayTimer, 10);
 });
 
 document.getElementById("pause-timer").addEventListener("click", () => {
-    clearInterval(int);
+    clearInterval(int);       // For pausing the timer
 });
 
 document.getElementById("reset-timer").addEventListener("click", () => {
-    clearInterval(int);
+    clearInterval(int);          // For resetinng the timer
     [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
     timeRef.innerHTML = "00 : 00 : 00 : 000 ";
 }); 
 
 function displayTimer() {
-    milliseconds += 10;
-    if(milliseconds == 1000) {
+    milliseconds += 10;  // Milisecond will increase when 10 units passed
+    if(milliseconds == 1000) { 
         milliseconds = 0;
-        seconds++;
+        seconds++;               
         if(seconds == 60) {
             seconds = 0;
             minutes++;
